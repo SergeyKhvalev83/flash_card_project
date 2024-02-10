@@ -2,9 +2,10 @@
   "name": "flashcards",
   "version": "1.0.0",
   "description": "",
-  "main": "runner.js",
+  "main": "controller-class.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node controller-class.js"
   },
   "keywords": [],
   "author": "",

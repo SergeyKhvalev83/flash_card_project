@@ -39,7 +39,7 @@ class Model {
     }
     for (let q = 0, a = 0; q < questHawk.length; q++, a++) {
       const obj = {};
-      obj.question = answHawk[q];
+      obj.question = answHawk[q] + '\n';
       obj.answer = questHawk[a];
       this.nightHawkArr.push(obj);
     }
@@ -93,33 +93,35 @@ class Model {
 
     for (let q = 0, a = 0; q < answRaccoon.length; q++, a++) {
       const obj = {};
-      obj.question = answRaccoon[q];
+      obj.question = answRaccoon[q] + '\n';
       obj.answer = questRaccoon[a];
       this.racoonArr.push(obj);
     }
   }
 
-  // getTopicQuestions(id) {
-  //   if (id === 1) {
-  //     return this.nightHawkArr;
-  //   } else if (ad === 2) {
-  //     return this.otterArr;
-  //   } else if (id === 3) {
-  //     return this.racoonArr;
-  //   }
-  //   return 'wrong id';
-  // }
+  getTopicQuestions(id) {
+    if (id === 1) {
+      return this.nightHawkArr;
+    } else if (id === 2) {
+      return this.otterArr;
+    } else if (id === 3) {
+      return this.racoonArr;
+    }
+    return 'wrong id';
+  }
 }
 
 const model = new Model();
-// // console.log(model.arrOfQuestionaAndAnswers);
+// // // // console.log(model.arrOfQuestionaAndAnswers);
 
 // model.readTopics();
 // console.log('RETRIVED TOPICS: ', model.arrOfTopics);
 
-console.log(model.allQuestionsAdnAnswers());
-console.log('ARR OF Q AND A FOR HAWKS: ', model.nightHawkArr);
-console.log('ARR OF Q AND A FOR OTTERS: ', model.otterArr);
-console.log('ARR OF Q AND A FOR RACCOON: ', model.racoonArr);
+// console.log(model.allQuestionsAdnAnswers());
+// console.log('ARR OF Q AND A FOR HAWKS: ', model.nightHawkArr);
+// console.log('ARR OF Q AND A FOR OTTERS: ', model.otterArr);
+// console.log('ARR OF Q AND A FOR RACCOON: ', model.racoonArr);
+
+// console.log(model.getTopicQuestions(2))
 
 module.exports = Model;
